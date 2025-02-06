@@ -1,25 +1,16 @@
 {
-  "auth": "zef:librasteve",
-  "authors": [
-    "librasteve"
-  ],
-  "build-depends": [
-  ],
-  "depends": [
-  ],
-  "description": "blah blah blah",
-  "license": "Artistic-2.0",
-  "name": "Air::Play",
-  "perl": "6.d",
-  "provides": {
-    "Air::Play": "lib/Air/Play.rakumod"
-  },
-  "resources": [
-  ],
-  "source-url": "",
-  "tags": [
-  ],
-  "test-depends": [
-  ],
-  "version": "0.0.1"
+    "name": "Air::Play",
+    "description": "blah blah blah",
+    "version": "0.0.1",
+    "authors": [
+        "librasteve"
+    ],
+    "auth": "zef:librasteve",
+    "build-depends": [],
+    "provides": {
+        "Air::Play": "lib/Air/Play.rakumod",
+        "Air::Play::Site01-PicoTable": "lib/Air/Play/Site01-PicoTable.rakumod"
+    },
+    "license": "Artistic-2.0",
+    "source-url": ""
 }
