@@ -19,32 +19,27 @@ https://chatgpt.com/share/67646547-ee48-8009-8354-0e4ced492f96
 ---
 
 # TODOs
-- [ ] integrate htmoo concepts
-- [ ] push pico/func up the stack (head, nav and so on)
-- [ ] new name, consolidate
-- cro run
+- [x] integrate htmoo concepts
+- [x] new name, consolidate
+- [x] cro run
+- [ ] push pico/func up the stack
+  - [x] head
+  - nav
+- [ ] site color
 - semantic pagen
-    - https://stackoverflow.com/questions/21927767/how-do-i-correctly-place-an-aside-tag
-    - picocss.com left nav?
-- hamburger menu
+  - header, main, footer
+  - https://stackoverflow.com/questions/21927767/how-do-i-correctly-place-an-aside-tag
+  - picocss.com left nav?
 - light dark better
     - https://www.perplexity.ai/search/please-show-me-how-the-picocss-hYJlJKwaRki4aO44y9J57A
 - language switcher
+- favicon
+- docs maker from Red
+- hamburger menu
 - sitemap & robots.txt
-- export BaseLib subset on demand NONE | SOME | ALL
-- names to Ait & HARC stack (HTMX, Ait, Raku, Cro)
-    - https://en.wikipedia.org/wiki/Ait
-    - An ait (/eɪt/, like eight) or eyot (/aɪ(ə)t, eɪt/) is a small island.
 - do all pico examples https://picocss.com/docs/
 - do all htmx examples
-- docs maker from Red
 - Redden all models
-
-HTMOO Steps
-- synopsis-raoo / HTMOO.rakumod
-    - dunder mifflin
-    - role Tag
-
 
 ---
 

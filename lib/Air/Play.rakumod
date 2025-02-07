@@ -1,10 +1,9 @@
 unit class Air::Play;
 
 use Air::Play::Site01-PicoTable;
-my $site = MySite.new;
 
 sub routes is export {
-    $site.routes
+    my-site.routes
 }
 
 =begin pod

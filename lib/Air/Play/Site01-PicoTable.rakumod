@@ -1,21 +1,19 @@
-use Cro::HTTP::Router;
-
 use Air::Functional :BASE;
 use Air::BaseLib;
 use Air::Component;
 
-#| write your own role to setup default values and custom attributes
-class MyPage does Page {}
-
-#| then each Page instance can reuse the defaults
-my $p = MyPage.new:
+#iamerejh - move to Site parms
+my $index = Page.new: :REFRESH(5),
     description => 'HTMX, Air, Raku, Cro',
-    title       => 'HARC Stack',
+    title       => 'hArc',
 ;
-$p.defaults;
+
+#iamerejh - add to Site parms
+my $logo = 'h<b>A</b>rc';
+my $items = [:picotable, :searchtable, :todos];
 
 my %data =
-    :thead[["Planet", "Diameter (km)", "Distance to Sun (AU)", "Orbit (days)"],],
+    :thead[["Planet", "Riameter (km)", "Distance to Sun (AU)", "Orbit (days)"],],
     :tbody[
         ["Mercury",  "4,880", "0.39",  "88"],
         ["Venus"  , "12,104", "0.72", "225"],
@@ -25,24 +23,14 @@ my %data =
     :tfoot[["Average", "9,126", "0.91", "341"],],
 ;
 
-$p.body: [
-    div [
-        h3 'Table';
-        table |%data, :class<striped>;
-    ]
+$index.body: [
+    header :class<container>, nav :$logo, $items;
+    main :class<container>,
+        div :id<content>, [
+            h3 'PicoTable';
+            table |%data, :class<striped>;
+        ]
 ];
 
-class MySite {
-#class Site01 does Site {
-
-    method routes {
-        route {
-            get -> {
-                content 'text/html', $p.HTML
-
-            }
-        }
-    }
-
-}
-
+my $site = Site.new: :$index;
+sub my-site is export {$site}
