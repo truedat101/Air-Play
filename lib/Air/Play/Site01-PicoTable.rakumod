@@ -4,6 +4,16 @@ use Air::Functional :BASE;
 use Air::BaseLib;
 use Air::Component;
 
+#| write your own role to setup default values and custom attributes
+class MyPage does Page {}
+
+#| then each Page instance can reuse the defaults
+my $p = MyPage.new:
+    description => 'HTMX, Air, Raku, Cro',
+    title       => 'HARC Stack',
+;
+$p.defaults;
+
 my %data =
     :thead[["Planet", "Diameter (km)", "Distance to Sun (AU)", "Orbit (days)"],],
     :tbody[
@@ -15,18 +25,24 @@ my %data =
     :tfoot[["Average", "9,126", "0.91", "341"],],
 ;
 
-my $html =
+$p.body: [
     div [
         h3 'Table';
         table |%data, :class<striped>;
     ]
-;
+];
 
-sub routes() is export {
-    route {
-        get -> {
-            content 'text/html', $html
+class MySite {
+#class Site01 does Site {
 
+    method routes {
+        route {
+            get -> {
+                content 'text/html', $p.HTML
+
+            }
         }
     }
+
 }
+
