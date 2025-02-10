@@ -24,16 +24,16 @@ https://chatgpt.com/share/67646547-ee48-8009-8354-0e4ced492f96
 - [x] cro run
 - [ ] push pico/func up the stack
   - [x] head
-  - nav
+  - [x] header, main, footer
+  - nav (sections) ... then site02
+  - nav (pages)
 - [ ] site color
 - semantic pagen
-  - header, main, footer
   - https://stackoverflow.com/questions/21927767/how-do-i-correctly-place-an-aside-tag
   - picocss.com left nav?
 - light dark better
     - https://www.perplexity.ai/search/please-show-me-how-the-picocss-hYJlJKwaRki4aO44y9J57A
 - language switcher
-- favicon
 - docs maker from Red
 - hamburger menu
 - sitemap & robots.txt

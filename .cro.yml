@@ -12,4 +12,7 @@
 "id": "http"
 "links":  []  
 "name": "http"
+"ignore":
+  - .iml
+  - .iml~
 ...

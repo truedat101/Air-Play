@@ -9,7 +9,8 @@
     "build-depends": [],
     "provides": {
         "Air::Play": "lib/Air/Play.rakumod",
-        "Air::Play::Site01-PicoTable": "lib/Air/Play/Site01-PicoTable.rakumod"
+        "Air::Play::Site01-Simple": "lib/Air/Play/Site01-Simple.rakumod",
+        "Air::Play::Site02-Sections": "lib/Air/Play/Site02-Sections.rakumod"
     },
     "license": "Artistic-2.0",
     "source-url": ""
