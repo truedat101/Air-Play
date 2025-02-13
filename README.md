@@ -25,8 +25,9 @@ https://chatgpt.com/share/67646547-ee48-8009-8354-0e4ced492f96
 - [ ] push pico/func up the stack
   - [x] head
   - [x] header, main, footer
-  - nav (sections) ... then site02
-  - nav (pages)
+  - [x] nav (sections) ... then site02
+  - [ ] nav (pages)... then site03
+  - [ ] nav (external)
 - [ ] site color
 - semantic pagen
   - https://stackoverflow.com/questions/21927767/how-do-i-correctly-place-an-aside-tag

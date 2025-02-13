@@ -1,6 +1,7 @@
 #!/usr/bin/env raku
 
 use lib "../lib";
+use Cro::HTTP::Log::File;
 use Cro::HTTP::Router;
 use Cro::HTTP::Server;
 
@@ -11,6 +12,9 @@ my Cro::Service $http = Cro::HTTP::Server.new(
     host => "0.0.0.0",
     port => 3000,
     application => routes(),
+    after => [
+        Cro::HTTP::Log::File.new(logs => $*OUT, errors => $*ERR)
+    ],
     );
 $http.start;
 say "Listening at http://0.0.0.0:3000";
