@@ -11,23 +11,23 @@ my %data =
         ["Mars"   ,  "6,779", "1.52", "687"],
     ],
     :tfoot[["Average", "9,126", "0.91", "341"],],
-;
+    ;
 
-my $section1 = Section.new:
-    div :id<content>, [
-        h3 'Section1';
+my $section1 = Content.new:
+    $[
+        h3 'Section 1';
         table |%data, :class<striped>;
     ];
 
-my $section2 = Section.new:
-    div :id<content>, [
-        h3 'Section2';
+my $section2 = Content.new:
+    $[
+        h3 'Section 2';
         table |%data;
     ];
 
 my $nav = Nav.new:
     logo => 'h<b>A</b>rc',
-    items => [Section1 => $section1, Section2 => $section2];
+    items => ["Section 1" => $section1, "Section 2" => $section2];
 
 my $footer = Footer.new: :attrs{:class<container>}, p Q|
     Hypered with <a href="https://htmx.org" target="new">htmx</a>.
