@@ -11,14 +11,14 @@ my %data =
         ["Mars"   ,  "6,779", "1.52", "687"],
     ],
     :tfoot[["Average", "9,126", "0.91", "341"],],
-    ;
+;
 
-sub section1 { Content.new: $[
+sub section1 { content $[
     h3 'Section 1';
     table |%data, :class<striped>; ]
 }
 
-sub section2 { Content.new: $[
+sub section2 { content $[
     h3 'Section 2';
     table |%data; ]
 }
@@ -26,10 +26,6 @@ sub section2 { Content.new: $[
 class MyPage is Page {
     has $.title       = 'hArc';
     has $.description = 'HTMX, Air, Raku, Cro';
-
-    has $.nav = Nav.new:
-        logo => 'h<b>A</b>rc',
-        items => [Section1 => section1, Section2 => section2];
 
     has $.footer = Footer.new: :attrs{:class<container>}, p Q|
         Hypered with <a href="https://htmx.org" target="new">htmx</a>.
@@ -41,8 +37,15 @@ class MyPage is Page {
     |;
 }
 
-my $index = MyPage.new: :name<index>;
-$index.main: section1.HTML;
+my $page1 = MyPage.new: :name<page1>; $page1.main: section1;
+my $page2 = MyPage.new: :name<page2>; $page2.main: section2;
 
-my $site = Site.new: :$index;
+my $nav = Nav.new:
+    logo => 'h<b>A</b>rc',
+    items => [Page1 => $page1, Page2 => $page2];
+
+$page1.nav = $nav;
+$page2.nav = $nav;
+
+my $site = Site.new: pages => [$page1,$page2];
 sub my-site is export {$site}
