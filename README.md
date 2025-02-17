@@ -26,7 +26,7 @@ https://chatgpt.com/share/67646547-ee48-8009-8354-0e4ced492f96
   - [x] head
   - [x] header, main, footer
   - [x] nav (sections) ... then site02
-  - [ ] nav (pages)... then site03
+  - [x] nav (pages)... then site03
   - [ ] nav (external)
 - [ ] site color
 - semantic pagen
