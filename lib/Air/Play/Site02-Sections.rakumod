@@ -13,15 +13,15 @@ my %data =
     :tfoot[["Average", "9,126", "0.91", "341"],],
     ;
 
-sub section1 { Content.new: $[
-    h3 'Section 1';
-    table |%data, :class<striped>; ]
-}
+my $Content1 = Content.new: $[
+    h3 'Content 1';
+    table |%data, :class<striped>; ];
 
-sub section2 { Content.new: $[
-    h3 'Section 2';
-    table |%data; ]
-}
+my $Content2 = Content.new: $[
+    h3 'Content 2';
+    table |%data; ];
+
+my $Google = External.new: attrs => {:href<https://google.com>}, 'Google';
 
 class MyPage is Page {
     has $.title       = 'hArc';
@@ -29,7 +29,7 @@ class MyPage is Page {
 
     has $.nav = Nav.new:
         logo => 'h<b>A</b>rc',
-        items => [Section1 => section1, Section2 => section2];
+        items => [:$Content1, :$Content2, :$Google];
 
     has $.footer = Footer.new: :attrs{:class<container>}, p Q|
         Hypered with <a href="https://htmx.org" target="new">htmx</a>.
@@ -41,8 +41,8 @@ class MyPage is Page {
     |;
 }
 
-my $index = MyPage.new: :name<index>;
-$index.main: section1.HTML;
+my $index = MyPage.new;
+$index.main: $Content1.HTML;
 
 my $site = Site.new: :$index;
 sub my-site is export {$site}
