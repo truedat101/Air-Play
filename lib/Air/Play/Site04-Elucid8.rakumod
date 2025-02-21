@@ -13,10 +13,11 @@ class MyPage is Page {
 
     has $.header = Header.new:
         nav => Nav.new(
-            items => [:$specification,:$reference,:$github,:$talk],
-            logo  => '<a href="/">elucid<b>=8</b></a>',
+            logo    => '<a href="/">elucid<b>=8</b></a>',
+            items   => [:$specification,:$reference,:$github,:$talk],
+            widgets => [LightDark.new],
         ),
-        tagline => Q|<p><i>a Multilingual Documentation Framework</i></a>|;
+        tagline => Q|<i>a Multilingual Documentation Framework</i>|;
 
     has $.footer = Footer.new: p Q|
         Hypered with <a href="https://htmx.org" target="_blank">htmx</a>.
@@ -27,17 +28,6 @@ class MyPage is Page {
         Styled by <a href="https://picocss.com" target="_blank">picocss</a>.
     |;
 }
-
-#<?.dark-mode>
-#  <li><a href="/light-mode">
-#    <i class="fas fa-sun"></i>
-#  </a></li>
-#</?>
-#<?.light-mode>
-#  <li><a href="/dark-mode">
-#    <i class="fas fa-moon"></i>
-#  </a></li>
-#</?>
 
 my $index = MyPage.new;
 $index.main: overview();
