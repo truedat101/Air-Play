@@ -3,17 +3,17 @@ use Air::BaseLib;
 use Air::Component;
 
 my $footer = Footer.new: :attrs{:class<container>}, p Q|
-    Hypered with <a href="https://htmx.org" target="new">htmx</a>.
-    Abridged on <a href="https://github.com/librasteve/Air" target="new"><b>air</b></a>.
-    Rendered by <a href="https://raku.org" target="new">raku</a>.
-    Constructed in <a href="https://cro.raku.org" target="new">cro</a>.
+    Hypered with <a href="https://htmx.org" target="_blank">htmx</a>.
+    Aloft on <a href="https://github.com/librasteve/Air" target="_blank"><b>&Aring;ir</b></a>.
+    Rendered by <a href="https://raku.org" target="_blank">raku</a>.
+    Constructed in <a href="https://cro.raku.org" target="_blank">cro</a>.
     &nbsp;&amp;&nbsp;
-    Styled by <a href="https://picocss.com" target="new">picocss</a>.
+    Styled by <a href="https://picocss.com" target="_blank">picocss</a>.
 |;
 
 my $index = Page.new: :$footer, :REFRESH(5),
     description => 'HTMX, Air, Raku, Cro',
-    title       => 'hArc';
+    title       => 'hÅrc';
 
 my %data =
     :thead[["Planet", "Diameter (km)", "Distance to Sun (AU)", "Orbit (days)"],],
@@ -32,5 +32,4 @@ $index.main:
         table |%data, :class<striped>;
     ];
 
-my $site = Site.new: :$index;
-sub my-site is export {$site}
+sub SITE is export {Site.new: :$index}

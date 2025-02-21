@@ -2,6 +2,7 @@ use Air::Functional :BASE;
 use Air::BaseLib;
 use Air::Component;
 
+# content
 my %data =
     :thead[["Planet", "Diameter (km)", "Distance to Sun (AU)", "Orbit (days)"],],
     :tbody[
@@ -10,8 +11,7 @@ my %data =
         ["Earth"  , "12,742", "1.00", "365"],
         ["Mars"   ,  "6,779", "1.52", "687"],
     ],
-    :tfoot[["Average", "9,126", "0.91", "341"],],
-    ;
+    :tfoot[["Average", "9,126", "0.91", "341"],];
 
 my $Content1 = Content.new: $[
     h3 'Content 1';
@@ -21,28 +21,28 @@ my $Content2 = Content.new: $[
     h3 'Content 2';
     table |%data; ];
 
-my $Google = External.new: attrs => {:href<https://google.com>}, 'Google';
+my $Google = External.new: :href<https://google.com>, 'Google';
 
+# theme
 class MyPage is Page {
-    has $.title       = 'hArc';
+    has $.title       = 'hÅrc';
     has $.description = 'HTMX, Air, Raku, Cro';
 
     has $.nav = Nav.new:
-        logo => 'h<b>A</b>rc',
+        logo => '<a href="/">h<b>&Aring;</b>rc</a>',
         items => [:$Content1, :$Content2, :$Google];
 
     has $.footer = Footer.new: :attrs{:class<container>}, p Q|
-        Hypered with <a href="https://htmx.org" target="new">htmx</a>.
-        Abridged on <a href="https://github.com/librasteve/Air" target="new"><b>air</b></a>.
-        Rendered by <a href="https://raku.org" target="new">raku</a>.
-        Constructed in <a href="https://cro.raku.org" target="new">cro</a>.
+        Hypered with <a href="https://htmx.org" target="_blank">htmx</a>.
+        Aloft on <a href="https://github.com/librasteve/Air" target="_blank"><b>&Aring;ir</b></a>.
+        Rendered by <a href="https://raku.org" target="_blank">raku</a>.
+        Constructed in <a href="https://cro.raku.org" target="_blank">cro</a>.
         &nbsp;&amp;&nbsp;
-        Styled by <a href="https://picocss.com" target="new">picocss</a>.
+        Styled by <a href="https://picocss.com" target="_blank">picocss</a>.
     |;
 }
 
 my $index = MyPage.new;
 $index.main: $Content1.HTML;
 
-my $site = Site.new: :$index;
-sub my-site is export {$site}
+sub SITE is export {Site.new: :$index}

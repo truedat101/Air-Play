@@ -22,12 +22,12 @@ https://chatgpt.com/share/67646547-ee48-8009-8354-0e4ced492f96
 - [x] integrate htmoo concepts
 - [x] new name, consolidate
 - [x] cro run
-- [ ] push pico/func up the stack
+- [x] push pico/func up the stack
   - [x] head
   - [x] header, main, footer
   - [x] nav (sections) ... then site02
   - [x] nav (pages)... then site03
-  - [ ] nav (external)
+  - [x] nav (external)
 - [ ] site color
 - semantic pagen
   - https://stackoverflow.com/questions/21927767/how-do-i-correctly-place-an-aside-tag
