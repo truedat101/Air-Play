@@ -42,7 +42,8 @@ class MyPage is Page {
     |;
 }
 
-my $index = MyPage.new;
-$index.main: $Content1.HTML;
-
-sub SITE is export {Site.new: :$index}
+sub SITE is export {
+    Site.new:
+        MyPage.new:
+            Main.new: $Content1.HTML;
+}

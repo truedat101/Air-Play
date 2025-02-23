@@ -16,16 +16,6 @@ class MyPage is Page {
     |;
 }
 
-my $page1 = MyPage.new;
-my $page2 = MyPage.new;
-
-my $nav = Nav.new:
-    logo => '<a href="/">h<b>&Aring;</b>rc</a>',
-    items => [Page1 => $page1, Page2 => $page2];
-
-$page1.nav = $page2.nav = $nav;
-
-
 my %data =
     :thead[["Planet", "Hexameter (km)", "Distance to Sun (AU)", "Orbit (days)"],],
     :tbody[["Mercury",  "4,880", "0.39",  "88"],
@@ -34,14 +24,23 @@ my %data =
            ["Mars"   ,  "6,779", "1.52", "687"],],
     :tfoot[["Average",  "9,126", "0.91", "341"],];
 
-$page1.main: div [
-    h3 'Page 1';
-    table |%data, :class<striped>;
-];
+my $page1 = MyPage.new: Main.new:
+    div [
+        h3 'Page 1';
+        table |%data, :class<striped>;
+    ];
 
-$page2.main: div [
-    h3 'Page 2';
-    table |%data;
-];
+my $page2 = MyPage.new: Main.new:
+    div [
+        h3 'Page 2';
+        table |%data;
+    ];
+
+
+my $nav = Nav.new:
+    logo => '<a href="/">h<b>&Aring;</b>rc</a>',
+    items => [Page1 => $page1, Page2 => $page2];
+
+$page1.nav = $page2.nav = $nav;
 
 sub SITE is export {Site.new: pages => [$page1, $page2]}
