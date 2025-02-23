@@ -1,5 +1,5 @@
 @use "node_modules/@picocss/pico/scss" with (
-  $theme-color: "green"
+  $theme-color: "cyan"
 );
 
 //some root overrides for scale https://github.com/picocss/pico/discussions/482
@@ -41,9 +41,8 @@ article>footer {
   /* Original: var(--pico-border-radius) */
 }
 
-// specific to Cro::Website::Basic
 b {
-  color: red;
+  color: purple;
 }
 
 .logo, .logo:hover {
@@ -57,4 +56,3 @@ body > footer > p {
   font-size:66%;
   font-style:italic;
 }
-

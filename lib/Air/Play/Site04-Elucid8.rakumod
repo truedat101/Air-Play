@@ -32,7 +32,7 @@ class MyPage is Page {
 
 sub SITE is export {
 
-    Site.new:
+    Site.new: :theme-color<cyan>, :bold-color<purple>, :scss,
         MyPage.new:
             Main.new: Q:to/END/;
 
