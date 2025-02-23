@@ -17,7 +17,8 @@ class MyPage is Page {
             items   => [:$specification,:$reference,:$github,:$talk],
             widgets => [LightDark.new],
         ),
-        tagline => Q|<i>a Multilingual Documentation Framework</i>|;
+        tagline => Q|<i>a Multilingual Documentation Framework</i>|
+    ;
 
     has $.footer = Footer.new: p Q|
         Hypered with <a href="https://htmx.org" target="_blank">htmx</a>.
@@ -29,12 +30,12 @@ class MyPage is Page {
     |;
 }
 
-my $index = MyPage.new;
-$index.main: overview();
+sub SITE is export {
 
-sub SITE is export {Site.new: :$index}
+    Site.new:
+        MyPage.new:
+            Main.new: Q:to/END/;
 
-sub overview { q:to/END/
 <p>elucid8 (pronounced 'elucidate') provides utilities to create, manage, and maintain a set of complex documents that explain
 how to use a product in multiple languages. A complex document is one that contains multiple headings, cross-references, tables,
 images, words to be indexed, footnotes, and other types of information.</p>
@@ -139,4 +140,5 @@ complex document with inline and block level options and it does not suffer from
 
 <p>elucid8 is a new solution framework bringing the benefits of Rakudoc to a wider audience.</p>
 END
+
 }
