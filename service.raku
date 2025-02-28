@@ -15,7 +15,7 @@ my Cro::Service $http = Cro::HTTP::Server.new(
     after => [
         Cro::HTTP::Log::File.new(logs => $*OUT, errors => $*ERR)
     ],
-    );
+);
 $http.start;
 say "Listening at http://0.0.0.0:3000";
 react {

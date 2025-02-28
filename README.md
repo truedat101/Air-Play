@@ -31,14 +31,16 @@ https://chatgpt.com/share/67646547-ee48-8009-8354-0e4ced492f96
 - [x] hamburger menu
 - [x] site color ...
 - semantic pagen
-  - https://stackoverflow.com/questions/21927767/how-do-i-correctly-place-an-aside-tag
-  - picocss.com left nav?
+  - site (theme) / page (nav) / section / ... tags / assumes
+- picocss.com left nav
 - language switcher
 - docs maker from Red
 - sitemap & robots.txt
 - do all pico examples https://picocss.com/docs/
 - do all htmx examples
-- Redden all models
+- redden all models
+- pico css settings to class Theme
+- Air tests
 
 ---
 
