@@ -1,5 +1,5 @@
 use Air::Functional :BASE;
-use Air::BaseLib;
+use Air::Base;
 use Air::Component;
 
 my $specification = External.new: :href<https://raku.github.io/rakudoc>;

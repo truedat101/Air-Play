@@ -30,8 +30,11 @@ https://chatgpt.com/share/67646547-ee48-8009-8354-0e4ced492f96
   - [x] nav (external)
 - [x] hamburger menu
 - [x] site color ...
-- semantic pagen
-  - site (theme) / page (nav) / section / ... tags / assumes
+- [ ] semantic pagen
+  - [x] site (theme) / page (nav) / section / ... tags / assumes
+    - [ ] all site examples
+    - [ ] aside, article, section (see semantic2.html)
+- gnat css
 - picocss.com left nav
 - language switcher
 - docs maker from Red
@@ -39,8 +42,8 @@ https://chatgpt.com/share/67646547-ee48-8009-8354-0e4ced492f96
 - do all pico examples https://picocss.com/docs/
 - do all htmx examples
 - redden all models
-- pico css settings to class Theme
-- Air tests
+- pico/gnat css settings to Theme module
+- Air tests (from bins)
 
 ---
 
