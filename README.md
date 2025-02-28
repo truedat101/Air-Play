@@ -1,5 +1,9 @@
 [![License: Artistic-2.0](https://img.shields.io/badge/License-Artistic%202.0-0298c3.svg)](https://opensource.org/licenses/Artistic-2.0)
 
+### WORK IN PROGRESS ###
+
+Please raise an Issue if you would like to feedback or assist.
+
 # Air::Play
 
 Playing with the HARC stack (HTMX, Air, Raku, Cro)
@@ -128,7 +132,7 @@ This library is free software; you can redistribute it and/or modify it under th
 
 ---
 
-## TODOS
+## TODO LATERS
 
 NB. this will evolve as more work is done (e.g. docker)...
 
