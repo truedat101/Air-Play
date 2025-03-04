@@ -13,37 +13,41 @@ my %data =
     ],
     :tfoot[["Average", "9,126", "0.91", "341"],];
 
-my $Content1 = Content.new: $[
-    h3 'Content 1';
-    table |%data, :class<striped>; ];
+my $Content1 = content $[
+    h3 safe 'Content 1';
+    table |%data, :class<striped>;
+];
 
-my $Content2 = Content.new: $[
-    h3 'Content 2';
-    table |%data; ];
+my $Content2 = content $[
+    h3 safe 'Content 2';
+    table |%data;
+];
 
-my $Google = External.new: :href<https://google.com>, 'Google';
+my $Google = external :href<https://google.com>, 'Google';
 
 # theme
-class MyPage is Page {
-    has $.title       = 'hÅrc';
-    has $.description = 'HTMX, Air, Raku, Cro';
-
-    has $.nav = Nav.new:
-        logo => '<a href="/">h<b>&Aring;</b>rc</a>',
-        items => [:$Content1, :$Content2, :$Google];
-
-    has $.footer = Footer.new: :attrs{:class<container>}, p Q|
+my &index = &page.assuming(
+    title => 'hÅrc',
+    description => 'HTMX, Air, Raku, Cro',
+    nav => nav(
+        logo => safe('<a href="/">h<b>&Aring;</b>rc</a>'),
+        items => [:$Content1, :$Content2, :$Google],
+        widgets => [lightdark],
+    ),
+    footer => footer(
+        p safe Q|
         Hypered with <a href="https://htmx.org" target="_blank">htmx</a>.
         Aloft on <a href="https://github.com/librasteve/Air" target="_blank"><b>&Aring;ir</b></a>.
         Rendered by <a href="https://raku.org" target="_blank">raku</a>.
         Constructed in <a href="https://cro.raku.org" target="_blank">cro</a>.
         &nbsp;&amp;&nbsp;
         Styled by <a href="https://picocss.com" target="_blank">picocss</a>.
-    |;
-}
+    |),
+);
 
+# site
 sub SITE is export {
-    Site.new:
-        MyPage.new:
-            Main.new: $Content1.HTML;
+    site
+        index
+            main $Content1
 }
