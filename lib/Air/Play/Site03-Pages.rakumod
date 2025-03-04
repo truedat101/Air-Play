@@ -6,7 +6,7 @@ class MyPage is Page {
     has $.title       = 'hÅrc';
     has $.description = 'HTMX, Air, Raku, Cro';
 
-    has $.footer = Footer.new: :attrs{:class<container>}, p Q|
+    has $.footer = Footer.new: p safe Q|
         Hypered with <a href="https://htmx.org" target="_blank">htmx</a>.
         Aloft on <a href="https://github.com/librasteve/Air" target="_blank"><b>&Aring;ir</b></a>.
         Rendered by <a href="https://raku.org" target="_blank">raku</a>.
@@ -38,7 +38,7 @@ my $page2 = MyPage.new: Main.new:
 
 
 my $nav = Nav.new:
-    logo => '<a href="/">h<b>&Aring;</b>rc</a>',
+    logo => safe( '<a href="/">h<b>&Aring;</b>rc</a>' ),
     items => [Page1 => $page1, Page2 => $page2];
 
 $page1.nav = $page2.nav = $nav;

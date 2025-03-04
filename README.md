@@ -36,7 +36,7 @@ https://chatgpt.com/share/67646547-ee48-8009-8354-0e4ced492f96
 - [x] site color ...
 - [ ] semantic pagen
   - [x] site (theme) / page (nav) / section / ... tags / assumes
-    - [ ] all site examples
+    - [x] all site examples
     - [ ] aside, article, section (see semantic2.html)
 - gnat css
 - picocss.com left nav
@@ -45,7 +45,7 @@ https://chatgpt.com/share/67646547-ee48-8009-8354-0e4ced492f96
 - sitemap & robots.txt
 - do all pico examples https://picocss.com/docs/
 - do all htmx examples
-- redden all models
+- add some red models (todos?)
 - pico/gnat css settings to Theme module
 - Air tests (from bins)
 
