@@ -13,12 +13,12 @@ my %data =
     ],
     :tfoot[["Average", "9,126", "0.91", "341"],];
 
-my $Content1 = content $[
+my $Content1 = content [
     h3 'Content 1';
     table |%data, :class<striped>;
 ];
 
-my $Content2 = content $[
+my $Content2 = content [
     h3 'Content 2';
     table |%data;
 ];

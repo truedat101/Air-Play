@@ -35,11 +35,11 @@ https://chatgpt.com/share/67646547-ee48-8009-8354-0e4ced492f96
 - [x] hamburger menu
 - [x] light dark
 - [x] site color ...
-- [ ] semantic pagen
+- [x] semantic pagen
   - [x] site (theme) / page (nav) / section / ... tags / assumes
   - [x] various site examples
-  - [ ] aside, article, section (see semantic2.html)
-  - [ ] shortcuts more obvious
+  - [x] aside, article, section, time
+- [x] sort out `$[]`
 - [ ] trait `is Subbed`
 - [ ] `.gist` / `.Str` == `.HTML`
 - [ ] docs maker from Red
