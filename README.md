@@ -33,21 +33,28 @@ https://chatgpt.com/share/67646547-ee48-8009-8354-0e4ced492f96
   - [x] nav (pages)... then site03
   - [x] nav (external)
 - [x] hamburger menu
+- [x] light dark
 - [x] site color ...
 - [ ] semantic pagen
   - [x] site (theme) / page (nav) / section / ... tags / assumes
-    - [x] all site examples
-    - [ ] aside, article, section (see semantic2.html)
+  - [x] various site examples
+  - [ ] aside, article, section (see semantic2.html)
+  - [ ] shortcuts more obvious
+- [ ] trait `is Subbed`
+- [ ] `.gist` / `.Str` == `.HTML`
+- [ ] docs maker from Red
+- [ ] Air tests (from bins)
+
+# BACKLOG
 - gnat css
 - picocss.com left nav
 - language switcher
-- docs maker from Red
 - sitemap & robots.txt
+- htmx forms
 - do all pico examples https://picocss.com/docs/
 - do all htmx examples
 - add some red models (todos?)
-- pico/gnat css settings to Theme module
-- Air tests (from bins)
+- pico/gnat css to Theme module
 
 ---
 
