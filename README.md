@@ -40,10 +40,11 @@ https://chatgpt.com/share/67646547-ee48-8009-8354-0e4ced492f96
   - [x] various site examples
   - [x] aside, article, section, time
 - [x] sort out `$[]`
-- [ ] trait `is Subbed`
+- [ ] trait `is subbed`
 - [ ] `.gist` / `.Str` == `.HTML`
 - [ ] docs maker from Red
 - [ ] Air tests (from bins)
+- [ ] Sparky badge
 
 # BACKLOG
 - gnat css
