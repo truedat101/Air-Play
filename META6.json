@@ -15,7 +15,8 @@
         "Air::Play::Site04-Elucid8": "lib/Air/Play/Site04-Elucid8.rakumod",
         "Air::Play::Site05-PagesFunc": "lib/Air/Play/Site05-PagesFunc.rakumod",
         "Air::Play::Site06-Semantic": "lib/Air/Play/Site06-Semantic.rakumod",
-        "Air::Play::Site07-Simple-ULlist": "lib/Air/Play/Site07-Simple-ULlist.rakumod"
+        "Air::Play::Site07-BaseExamples": "lib/Air/Play/Site07-BaseExamples.rakumod",
+        "Air::Play::Site08-SearchTable": "lib/Air/Play/Site08-SearchTable.rakumod"
     },
     "license": "Artistic-2.0",
     "source-url": "https://github.com/librasteve/Air-Play.git"

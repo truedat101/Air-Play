@@ -6,7 +6,7 @@ Please raise an Issue if you would like to feedback or assist.
 
 # Air::Play
 
-Playing with the HARC stack (HTMX, Air, Raku, Cro)
+Playing with the HARC stack (HTMX, Air, Red, Cro)
 Examples with Pico CSS
 
 path is
@@ -40,21 +40,23 @@ https://chatgpt.com/share/67646547-ee48-8009-8354-0e4ced492f96
   - [x] various site examples
   - [x] aside, article, section, time
 - [x] sort out `$[]`
-- [ ] trait `is subbed`
+- [x] docs maker from Red
+- [ ] add some red models (todos?)
 - [ ] `.gist` / `.Str` == `.HTML`
-- [ ] docs maker from Red
 - [ ] Air tests (from bins)
 - [ ] Sparky badge
 
 # BACKLOG
-- gnat css
+- gnat css https://github.com/gnat/css-scope-inline?tab=readme-ov-file
 - picocss.com left nav
 - language switcher
 - sitemap & robots.txt
+  - https://www.xml-sitemaps.com/details-elucid8.org-74ab32874.html
+  - https://github.com/tristangoossens/php-sitemap-generator/tree/main
+  - https://developers.google.com/search/docs/crawling-indexing/robots/create-robots-txt
 - htmx forms
 - do all pico examples https://picocss.com/docs/
 - do all htmx examples
-- add some red models (todos?)
 - pico/gnat css to Theme module
 
 ---
@@ -80,13 +82,9 @@ Install raku - eg. from [rakubrew](https://rakubrew.org), then:
 - `raku -Ilib service.raku`
 - Open a browser and go to `http://localhost:3000`
 
+Select the example site you want by commenting out the others in the `Play.rakumod` file.
+
 You will note that cro has many other options as documented at [Cro](https://cro.raku.org) if you want to deploy to a production server.
-
-
-## TIPS & EXTRAS
-
-- In development set CRO_DEV=1 in the [environment](https://cro.services/docs/reference/cro-webapp-template#Template_auto-reload)
-- You can use `note` to log info to the cro log window
 
 ---
 

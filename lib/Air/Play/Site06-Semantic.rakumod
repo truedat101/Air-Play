@@ -19,6 +19,15 @@ sub SITE is export {
         div [
           section :id<blog>, [
             h2 'Latest Blog Posts';
+
+            article [
+                h3 'Semantic HTML in Action';
+                p  'Published on ', time(:datetime<2025-03-11>);
+                img :src<img/layout.gif>;
+                p  'The semantic HTML tags used on this page.';
+                button 'Read More';
+            ];
+
             article [
               h3 'The Importance of Semantic HTML';
               p  'Published on ', time(:datetime<2025-02-27>);
