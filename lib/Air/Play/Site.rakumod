@@ -68,8 +68,6 @@ class Results does Component {
 }
 
 class SearchTable does Component {
-    has Str  $.base;
-
     has Str  $.title = 'Search';
     has      $.thead = <First Last Email>;
 
