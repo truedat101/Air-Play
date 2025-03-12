@@ -41,8 +41,7 @@ https://chatgpt.com/share/67646547-ee48-8009-8354-0e4ced492f96
   - [x] aside, article, section, time
 - [x] sort out `$[]`
 - [x] docs maker from Red
-- [ ] add some red models (todos?)
-- [ ] `.gist` / `.Str` == `.HTML`
+- [x] add some red models
 - [ ] Air tests (from bins)
 - [ ] Sparky badge
 
