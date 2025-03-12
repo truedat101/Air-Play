@@ -2,6 +2,9 @@ use Air::Functional :BASE;
 use Air::Base;
 use Air::Component;
 
+use Air::Play::Site;
+
+my @components = [SearchTable.new];
 
 my &index = &page.assuming( #:REFRESH(1),
     title       => 'hÅrc',
@@ -10,17 +13,10 @@ my &index = &page.assuming( #:REFRESH(1),
 );
 
 sub SITE is export {
-    site #:bold-color<blue>,
+    site :@components,
         index
             main
                 div [
-                    h3 'Table';
-                    table [[1,2],[3,4]], :thead[<Left Right>,];
-
-                    hr;
-
-                    h3 'Grid';
-                    grid 1..6;
+                    searchtable :id(0)
                 ]
 }
-

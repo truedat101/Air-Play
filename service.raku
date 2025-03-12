@@ -6,6 +6,7 @@ use Cro::HTTP::Router;
 use Cro::HTTP::Server;
 
 use Air::Play;
+#use Air::Play::Site08-SearchTable;
 
 my Cro::Service $http = Cro::HTTP::Server.new(
     http => <1.1>,
