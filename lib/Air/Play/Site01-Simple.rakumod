@@ -13,10 +13,10 @@ my &planets = &table.assuming(
 );
 
 
-my &index = &page.assuming( #:REFRESH(1),
+my &index = &page.assuming( :REFRESH(1),
     title       => 'hÅrc',
     description => 'HTMX, Air, Raku, Cro',
-    footer      => footer p ['Aloft on ', b safe '&Aring;ir'],
+    footer      => footer p ['Aloft on ', b 'Åir'],
 );
 
 

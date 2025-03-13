@@ -2,26 +2,18 @@ use Air::Functional :BASE;
 use Air::Base;
 use Air::Component;
 
-my &index = &page.assuming( #:REFRESH(1),
-    title       => 'hÅrc',
-    description => 'HTMX, Air, Raku, Cro',
-    footer      => footer p ['Aloft on ', b safe '&Aring;ir'],
-);
-
 role HxTodo {
     method hx-toggle(--> Hash()) {
         :hx-get("$.url/$.id/toggle"),
         :hx-target<closest tr>,
         :hx-swap<outerHTML>,
     }
-
     method hx-create(--> Hash()) {
         :hx-post("$.url"),
         :hx-target<table>,
         :hx-swap<beforeend>,
         :hx-on:htmx:after-request<this.reset()>,
     }
-
     method hx-delete(--> Hash()) {
         :hx-delete("$.url/$.id"),
         :hx-confirm<Are you sure?>,
@@ -30,7 +22,9 @@ role HxTodo {
     }
 }
 
-class Todo does HxTodo does Component {
+class Todo does Component {
+    also does HxTodo;
+
     has Bool $.checked is rw = False;
     has Str  $.text;
 
@@ -47,12 +41,15 @@ class Todo does HxTodo does Component {
     }
 }
 
-class Frame does Tag does HxTodo {
+class Frame does Tag {
+    also does HxTodo;
+
     has Todo @.todos;
     has $.url = "todo";
 
     method HTML {
         div [
+            h3 'Todos';
             table @!todos;
             form  |$.hx-create, [
                 input  :name<text>;
@@ -62,14 +59,17 @@ class Frame does Tag does HxTodo {
     }
 }
 
-my @todos = do for <one two three> -> $text { Todo.new: :$text };
+my &index = &page.assuming(
+        title       => 'hÅrc',
+        description => 'HTMX, Air, Raku, Cro',
+        footer      => footer p ['Aloft on ', b 'Åir'],
+    );
+
+my @todos = do for <one two 3> -> $text { Todo.new: :$text };
 
 sub SITE is export {
-    site :components(@todos),
+    site :components(@todos), :theme-color<azure>,
         index
             main
-                div [
-                    h3 'Todos';
-                    Frame.new: :@todos;
-                ]
+                Frame.new: :@todos;
 }

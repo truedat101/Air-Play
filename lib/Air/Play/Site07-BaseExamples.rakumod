@@ -6,21 +6,31 @@ use Air::Component;
 my &index = &page.assuming( #:REFRESH(1),
     title       => 'hÅrc',
     description => 'HTMX, Air, Raku, Cro',
-    footer      => footer p ['Aloft on ', b safe '&Aring;ir'],
+    footer      => footer p ['Aloft on ', b 'Åir'],
 );
 
 sub SITE is export {
-    site #:bold-color<blue>,
-        index
+    site :theme-color<blue>,
+        index :REFRESH(10),
             main
                 div [
                     h3 'Table';
                     table [[1,2],[3,4]], :thead[<Left Right>,];
 
-                    hr;
-
                     h3 'Grid';
-                    grid 1..6;
+                    grid 1..18;
+
+                    h3 'Button';
+                    div :role<group>,
+                    [
+                        button 'Button';
+                        button 'Secondary', :class<secondary>;
+                        button 'Contrast',  :class<contrast>;
+                        button 'Outline',   :class<secondary outline>;
+                        button 'Disabled',  :class<outline> :disabled;
+                    ];
+
+                    hr;
                 ]
 }
 
