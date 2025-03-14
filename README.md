@@ -15,11 +15,6 @@ path is
 3. add htmx based edit / preview to certain pages for admin (like the current rakudoc site), with raku syntax highlighting with Rainbow and
 4. do something similar for markdown
 
-# Pitch
-
-https://chatgpt.com/share/67646547-ee48-8009-8354-0e4ced492f96
-- maximally decomposed apps
-
 ---
 
 # TODOs
@@ -42,8 +37,8 @@ https://chatgpt.com/share/67646547-ee48-8009-8354-0e4ced492f96
 - [x] sort out `$[]`
 - [x] docs maker from Red
 - [x] add some red models
-- [ ] Air tests (from bins)
-- [ ] Sparky badge
+- [x] Air tests (from bins)
+- [x] Sparky badge
 
 # BACKLOG
 - gnat css https://github.com/gnat/css-scope-inline?tab=readme-ov-file
