@@ -47,6 +47,7 @@ https://chatgpt.com/share/67646547-ee48-8009-8354-0e4ced492f96
 
 # BACKLOG
 - gnat css https://github.com/gnat/css-scope-inline?tab=readme-ov-file
+- pico/gnat css to Theme module
 - picocss.com left nav
 - language switcher
 - sitemap & robots.txt
@@ -56,7 +57,6 @@ https://chatgpt.com/share/67646547-ee48-8009-8354-0e4ced492f96
 - htmx forms
 - do all pico examples https://picocss.com/docs/
 - do all htmx examples
-- pico/gnat css to Theme module
 
 ---
 

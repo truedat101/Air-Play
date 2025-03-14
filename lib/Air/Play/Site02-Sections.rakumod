@@ -1,6 +1,5 @@
 use Air::Functional :BASE;
 use Air::Base;
-use Air::Component;
 
 # content
 my %data =
@@ -27,22 +26,14 @@ my $Google = external :href<https://google.com>;
 
 # theme
 my &index = &page.assuming(
-    title => 'hÅrc',
+    title       => 'hÅrc',
     description => 'HTMX, Air, Raku, Cro',
-    nav => nav(
-        logo => safe('<a href="/">h<b>&Aring;</b>rc</a>'),
-        items => [:$Content1, :$Content2, :$Google],
+    nav         => nav(
+        logo    => safe('<a href="/">h<b>&Aring;</b>rc</a>'),
+        items   => [:$Content1, :$Content2, :$Google],
         widgets => [lightdark],
     ),
-    footer => footer(
-        p safe Q|
-        Hypered with <a href="https://htmx.org" target="_blank">htmx</a>.
-        Aloft on <a href="https://github.com/librasteve/Air" target="_blank"><b>&Aring;ir</b></a>.
-        Remembered by <a href="https://fco.github.io/Red/" target="_blank">red</a>.
-        Constructed in <a href="https://cro.raku.org" target="_blank">cro</a>.
-        &nbsp;&amp;&nbsp;
-        Styled by <a href="https://picocss.com" target="_blank">picocss</a>.
-    |),
+    footer      => footer p ['Aloft on ', b 'Åir'],
 );
 
 # site

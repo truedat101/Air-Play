@@ -41,7 +41,7 @@ class SearchBox does HxSearchBox {
     has $.url;
     has $.title;
 
-    method HTML {
+    multi method HTML {
         div [
             h3 [
                 $!title,
@@ -58,7 +58,7 @@ class SearchBox does HxSearchBox {
 class Results does Component {
     has @.data is rw = [];
 
-    method HTML {
+    multi method HTML {
         tbody :id<search-results>,
             do for @!data {
                 tr
@@ -85,14 +85,14 @@ class SearchTable does Component {
 
         $!results.data = Person.^all.grep: {
             $_.firstName.&check ||
-                $_.lastName.&check  ||
-                $_.email.&check
+            $_.lastName.&check  ||
+            $_.email.&check
         };
 
         respond $!results;
     }
 
-    method HTML {
+    multi method HTML {
         [
             $!searchbox.HTML;
 

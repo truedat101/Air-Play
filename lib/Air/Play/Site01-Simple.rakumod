@@ -1,6 +1,5 @@
 use Air::Functional :BASE;
 use Air::Base;
-use Air::Component;
 
 my &planets = &table.assuming(
     :thead[["Planet", "Diameter (km)",

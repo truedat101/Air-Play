@@ -10,15 +10,15 @@ my &index = &page.assuming( #:REFRESH(1),
 );
 
 sub SITE is export {
-    site :theme-color<blue>,
-        index :REFRESH(10),
+    site #:theme-color<blue>,
+        index :REFRESH(5),
             main
                 div [
                     h3 'Table';
                     table [[1,2],[3,4]], :thead[<Left Right>,];
 
                     h3 'Grid';
-                    grid 1..18;
+                    grid 1..17;
 
                     h3 'Button';
                     div :role<group>,

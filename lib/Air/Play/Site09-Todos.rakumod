@@ -33,7 +33,7 @@ class Todo does Component {
         respond self;
     }
 
-    method HTML {
+    multi method HTML {
         tr
             td(input :type<checkbox>, :$!checked, |$.hx-toggle),
             td($!checked ?? del $!text !! $!text),
@@ -47,7 +47,7 @@ class Frame does Tag {
     has Todo @.todos;
     has $.url = "todo";
 
-    method HTML {
+    multi method HTML {
         div [
             h3 'Todos';
             table @!todos;
