@@ -1,26 +1,35 @@
 {
-    "name": "Air::Play",
-    "description": "blah blah blah",
-    "version": "0.0.3",
-    "authors": [
-        "librasteve"
-    ],
-    "auth": "zef:librasteve",
-    "build-depends": [],
-    "provides": {
-        "Air::Play": "lib/Air/Play.rakumod",
-        "Air::Play::Site": "lib/Air/Play/Site.rakumod",
-        "Air::Play::Site00-Minimal": "lib/Air/Play/Site00-Minimal.rakumod",
-        "Air::Play::Site01-Simple": "lib/Air/Play/Site01-Simple.rakumod",
-        "Air::Play::Site02-Sections": "lib/Air/Play/Site02-Sections.rakumod",
-        "Air::Play::Site03-Pages": "lib/Air/Play/Site03-Pages.rakumod",
-        "Air::Play::Site04-Elucid8": "lib/Air/Play/Site04-Elucid8.rakumod",
-        "Air::Play::Site05-PagesFunc": "lib/Air/Play/Site05-PagesFunc.rakumod",
-        "Air::Play::Site06-Semantic": "lib/Air/Play/Site06-Semantic.rakumod",
-        "Air::Play::Site07-BaseExamples": "lib/Air/Play/Site07-BaseExamples.rakumod",
-        "Air::Play::Site08-SearchTable": "lib/Air/Play/Site08-SearchTable.rakumod",
-        "Air::Play::Site09-Todos": "lib/Air/Play/Site09-Todos.rakumod"
-    },
-    "license": "Artistic-2.0",
-    "source-url": "https://github.com/librasteve/Air-Play.git"
+  "auth": "zef:librasteve",
+  "authors": [
+    "librasteve"
+  ],
+  "build-depends": [
+  ],
+  "depends": [
+  ],
+  "description": "blah blah blah",
+  "license": "Artistic-2.0",
+  "name": "Air::Play",
+  "provides": {
+    "Air::Play": "lib/Air/Play.rakumod",
+    "Air::Play::Site": "lib/Air/Play/Site.rakumod",
+    "Air::Play::Site00-Minimal": "lib/Air/Play/Site00-Minimal.rakumod",
+    "Air::Play::Site01-Simple": "lib/Air/Play/Site01-Simple.rakumod",
+    "Air::Play::Site02-Sections": "lib/Air/Play/Site02-Sections.rakumod",
+    "Air::Play::Site03-Pages": "lib/Air/Play/Site03-Pages.rakumod",
+    "Air::Play::Site04-Elucid8": "lib/Air/Play/Site04-Elucid8.rakumod",
+    "Air::Play::Site05-PagesFunc": "lib/Air/Play/Site05-PagesFunc.rakumod",
+    "Air::Play::Site06-Semantic": "lib/Air/Play/Site06-Semantic.rakumod",
+    "Air::Play::Site07-BaseExamples": "lib/Air/Play/Site07-BaseExamples.rakumod",
+    "Air::Play::Site08-SearchTable": "lib/Air/Play/Site08-SearchTable.rakumod",
+    "Air::Play::Site09-Todos": "lib/Air/Play/Site09-Todos.rakumod"
+  },
+  "resources": [
+  ],
+  "source-url": "https://github.com/librasteve/Air-Play.git",
+  "tags": [
+  ],
+  "test-depends": [
+  ],
+  "version": "0.0.4"
 }
