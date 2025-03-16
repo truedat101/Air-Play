@@ -2,29 +2,25 @@ use Air::Functional :BASE;
 use Air::Base;
 use Air::Component;
 
-role HxTodo {
-    method hx-toggle(--> Hash()) {
-        :hx-get("$.url/$.id/toggle"),
-        :hx-target<closest tr>,
-        :hx-swap<outerHTML>,
-    }
-    method hx-create(--> Hash()) {
-        :hx-post("$.url"),
-        :hx-target<table>,
-        :hx-swap<beforeend>,
-        :hx-on:htmx:after-request<this.reset()>,
-    }
-    method hx-delete(--> Hash()) {
-        :hx-delete("$.url/$.id"),
-        :hx-confirm<Are you sure?>,
-        :hx-target<closest tr>,
-        :hx-swap<delete>,
-    }
+sub hx-create($url --> Hash()) {
+    :hx-post("$url"),
+    :hx-target<table>,
+    :hx-swap<beforeend>,
+    :hx-on:htmx:after-request<this.reset()>,
+}
+sub hx-toggle($url, $id --> Hash()) {
+    :hx-get("$url/$id/toggle"),
+    :hx-target<closest tr>,
+    :hx-swap<outerHTML>,
+}
+sub hx-delete($url, $id --> Hash()) {
+    :hx-delete("$url/$id"),
+    :hx-confirm<Are you sure?>,
+    :hx-target<closest tr>,
+    :hx-swap<delete>,
 }
 
 class Todo does Component {
-    also does HxTodo;
-
     has Bool $.checked is rw = False;
     has Str  $.text;
 
@@ -35,41 +31,29 @@ class Todo does Component {
 
     multi method HTML {
         tr
-            td(input :type<checkbox>, :$!checked, |$.hx-toggle),
-            td($!checked ?? del $!text !! $!text),
-            td(button :type<submit>, :style<width:50px>, |$.hx-delete, '-'),
-    }
-}
-
-class Frame does Tag {
-    also does HxTodo;
-
-    has Todo @.todos;
-    has $.url = "todo";
-
-    multi method HTML {
-        div [
-            h3 'Todos';
-            table @!todos;
-            form  |$.hx-create, [
-                input  :name<text>;
-                button :type<submit>, '+';
-            ];
-        ]
+            td( input :type<checkbox>, |hx-toggle($.url,$.id), :$!checked ),
+            td( $!checked ?? del $!text !! $!text),
+            td( button :type<submit>, |hx-delete($.url,$.id), :style<width:50px>, '-'),
     }
 }
 
 my &index = &page.assuming(
-        title       => 'hÅrc',
-        description => 'HTMX, Air, Raku, Cro',
-        footer      => footer p ['Aloft on ', b 'Åir'],
-    );
+    title       => 'hÅrc',
+    description => 'HTMX, Air, Raku, Cro',
+    footer      => footer p ['Aloft on ', b 'Åir'],
+);
 
-my @todos = do for <one two 3> -> $text { Todo.new: :$text };
+my @todos = do for <one two> -> $text { Todo.new: :$text };
 
 sub SITE is export {
-    site :components(@todos), :theme-color<azure>,
+    site :components(@todos),
         index
-            main
-                Frame.new: :@todos;
+            main [
+                h3 'Todos';
+                table @todos;
+                form  |hx-create("todo"), [
+                    input  :name<text>;
+                    button :type<submit>, '+';
+                ];
+            ]
 }

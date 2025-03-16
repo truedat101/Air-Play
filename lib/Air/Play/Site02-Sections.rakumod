@@ -25,20 +25,20 @@ my $Content2 = content [
 my $Google = external :href<https://google.com>;
 
 # theme
-my &index = &page.assuming(
-    title       => 'hÅrc',
-    description => 'HTMX, Air, Raku, Cro',
+my &index = &page.assuming( #:REFRESH(5),
+    title       => 'hx-arc',
+    description => 'HTMX: Air, Raku, Cro',
     nav         => nav(
-        logo    => safe('<a href="/">h<b>&Aring;</b>rc</a>'),
+        logo    => safe('<a href="/">hx-<b>årc</b></a>'),
         items   => [:$Content1, :$Content2, :$Google],
         widgets => [lightdark],
     ),
-    footer      => footer p ['Aloft on ', b 'Åir'],
+    footer      => footer p ['Aloft on ', b 'åir'],
 );
 
 # site
 sub SITE is export {
-    site
+    site :bold-color<maroon>,
         index
             main $Content1
 }
