@@ -14,7 +14,7 @@ my &planets = &table.assuming(
 
 my &index = &page.assuming( :REFRESH(1),
     title       => 'hÅrc',
-    description => 'HTMX, Air, Raku, Cro',
+    description => 'HTMX, Air, Red, Cro',
     footer      => footer p ['Aloft on ', b 'Åir'],
 );
 

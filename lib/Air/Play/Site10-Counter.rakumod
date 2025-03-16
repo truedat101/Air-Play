@@ -2,11 +2,11 @@ use Air::Functional :BASE;
 use Air::Base;
 use Air::Component;
 
-my &index = &page.assuming(
+my &index = &page.assuming( #:REFRESH(5),
     title       => 'hÅrc',
-    description => 'HTMX, Air, Raku, Cro',
+    description => 'HTMX, Air, Red, Cro',
     footer      => footer p ['Aloft on ', b 'Åir'],
-    );
+);
 
 sub hx-increment(--> Hash()) {
     :hx-get</counter/1/increment>, :hx-target<#counter-input>,
@@ -31,7 +31,7 @@ class Counter does Component {
 }
 
 sub SITE is export {
-    site :components(Counter.new),
+    site :components(Counter.new), #:theme-color<red>,
         index
             main [
                 h3 'Server Counter:';

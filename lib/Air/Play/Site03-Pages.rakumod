@@ -4,7 +4,7 @@ use Air::Component;
 
 class MyPage is Page {
     has $.title       = 'hÅrc';
-    has $.description = 'HTMX, Air, Raku, Cro';
+    has $.description = 'HTMX, Air, Red, Cro';
 
     has $.footer = Footer.new: p safe Q|
         Hypered with <a href="https://htmx.org" target="_blank">htmx</a>.

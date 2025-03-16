@@ -7,7 +7,7 @@ use Air::Component;
 
 class MyPage is Page {
     has Str $.title       = 'hÅrc';
-    has Str $.description = 'HTMX, Air, Raku, Cro';
+    has Str $.description = 'HTMX, Air, Red, Cro';
 
     has Footer $.footer = footer(
         p safe Q|
