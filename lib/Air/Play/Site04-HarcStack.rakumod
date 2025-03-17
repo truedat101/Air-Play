@@ -3,8 +3,8 @@ use Air::Base;
 use Air::Component;
 
 my $htmx = external :href<https://htmx.org>;
-my $air  = external :href<https://raku.land/zef:librasteve/Air>;
-my $red  = external :href<https://raku.land/zef:FCO/Red>;
+my $air  = external :href<https://github.com/librasteve/Air>;
+my $red  = external :href<https://github.com/FCO/Red>;
 my $cro  = external :href<https://cro.raku.org>;
 my $raku = external :href<https://raku.org>;
 my $talk = external :href<https://discord.gg/VzYpdQ6>;
@@ -61,18 +61,11 @@ site :theme-color<azure>, :bold-color<maroon>,
     <h2>Air: Code Clarity</h2>
     <p>Air aims to be the purest possible expression of HTMX, ensuring that hArc websites are built with a focus on content and layout rather than embedded markup. By embracing a functional coding style for composition, Air improves code clarity. It consists of a set of libraries that generate HTML and serve it via Cro, that results in concise, legible, and maintainable web applications.</p>
 
-    <figure>
-    <img src="/img/AirModules.png" alt="Air module diagram">
-    <figcaption>Air::Base, Air::Component & Air::Functional</figcaption>
-    </figure>
     <hr>
 
     <h2>Red: Data Model</h2>
     <p>Red is a powerful ORM (Object-Relational Mapper) for raku that provides an intuitive way to interact with databases. It supports various database backends and enables developers to model their data using raku’s expressive type system. Red simplifies database operations with a declarative syntax, making it easy to define schemas, query data, and perform complex transactions while maintaining the flexibility and safety of raku’s type system.</p>
-    <figure>
-    <img src="/img/RedModel.png" alt="an example Red model">
-    <figcaption>An example Red data model</figcaption>
-    </figure>
+
     <hr>
 
     <h2>Cro: Web Services</h2>
