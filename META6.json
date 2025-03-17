@@ -6,6 +6,9 @@
         "librasteve"
     ],
     "auth": "zef:librasteve",
+    "depends": [
+        "Air"
+    ],
     "build-depends": [],
     "provides": {
         "Air::Play": "lib/Air/Play.rakumod",
