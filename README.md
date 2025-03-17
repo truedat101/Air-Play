@@ -17,44 +17,6 @@ path is
 
 ---
 
-# TODOs
-- [x] integrate htmoo concepts
-- [x] new name, consolidate
-- [x] cro run
-- [x] push pico/func up the stack
-  - [x] head
-  - [x] header, main, footer
-  - [x] nav (sections) ... then site02
-  - [x] nav (pages)... then site03
-  - [x] nav (external)
-- [x] hamburger menu
-- [x] light dark
-- [x] site color ...
-- [x] semantic pagen
-  - [x] site (theme) / page (nav) / section / ... tags / assumes
-  - [x] various site examples
-  - [x] aside, article, section, time
-- [x] sort out `$[]`
-- [x] docs maker from Red
-- [x] add some red models
-- [x] Air tests (from bins)
-- [x] Sparky badge
-
-# BACKLOG
-- gnat css https://github.com/gnat/css-scope-inline?tab=readme-ov-file
-- pico/gnat css to Theme module
-- picocss.com left nav
-- language switcher
-- sitemap & robots.txt
-  - https://www.xml-sitemaps.com/details-elucid8.org-74ab32874.html
-  - https://github.com/tristangoossens/php-sitemap-generator/tree/main
-  - https://developers.google.com/search/docs/crawling-indexing/robots/create-robots-txt
-- htmx forms
-- do all pico examples https://picocss.com/docs/
-- do all htmx examples
-
----
-
 # Local
 
 ## GETTING STARTED
@@ -102,7 +64,7 @@ install sass (in the static/css dir)
 
 ## Deployment
 - `zef install https://github.com/librasteve/air-play.git --deps-only --/test`
-- `git clone https://github.com/librasteve/air-play.git && cd Air-Play`
+- `git clone https://github.com/librasteve/air-play.git && cd air-play`
 - `zef install . --force-install --/test`
 - adjust .cro.yml for your needs (e.g. HTTPS) -or-
 - `export WEBSITE_HOST="0.0.0.0" && export WEBSITE_PORT="3000"`
@@ -132,12 +94,22 @@ This library is free software; you can redistribute it and/or modify it under th
 
 ---
 
-## TODO LATERS
+---
 
-NB. this will evolve as more work is done (e.g. docker)...
-
-You can also build and run a docker image while in the app root using:
-
+# BACKLOG
+- gnat css https://github.com/gnat/css-scope-inline?tab=readme-ov-file
+- pico/gnat css to Theme module
+- picocss.com left nav
+- language switcher
+- sitemap & robots.txt
+  - https://www.xml-sitemaps.com/details-elucid8.org-74ab32874.html
+  - https://github.com/tristangoossens/php-sitemap-generator/tree/main
+  - https://developers.google.com/search/docs/crawling-indexing/robots/create-robots-txt
+- htmx forms
+- do all pico examples https://picocss.com/docs/
+- do all htmx examples
+- docker deployment
+eg
 ```
 docker build -t this .
 docker run --rm -p 8888:8888 this
