@@ -44,7 +44,7 @@ site :theme-color<azure>, :bold-color<maroon>,
     </figure>
     <hr>
 
-    <h2>HTMX: Server Centric</h2>
+    <h2>HTMX: Server Side</h2>
     <p>HTMX provides server side website code with the dynamic and attractive UX of a reactive JavaScript SPA. It extends HTML with attributes like:</p>
 
     <ul>
@@ -58,7 +58,7 @@ site :theme-color<azure>, :bold-color<maroon>,
 
     <hr>
 
-    <h2>Air: The hArc Stack Glue</h2>
+    <h2>Air: Code Clarity</h2>
     <p>Air aims to be the purest possible expression of HTMX, ensuring that hArc websites are built with a focus on content and layout rather than embedded markup. By embracing a functional coding style for composition, Air improves code clarity. It consists of a set of libraries that generate HTML and serve it via Cro, that results in concise, legible, and maintainable web applications.</p>
 
     <figure>
@@ -67,7 +67,7 @@ site :theme-color<azure>, :bold-color<maroon>,
     </figure>
     <hr>
 
-    <h2>Red: ORM Data Model</h2>
+    <h2>Red: Data Model</h2>
     <p>Red is a powerful ORM (Object-Relational Mapper) for raku that provides an intuitive way to interact with databases. It supports various database backends and enables developers to model their data using raku’s expressive type system. Red simplifies database operations with a declarative syntax, making it easy to define schemas, query data, and perform complex transactions while maintaining the flexibility and safety of raku’s type system.</p>
     <figure>
     <img src="/img/RedModel.png" alt="an example Red model">
@@ -75,13 +75,14 @@ site :theme-color<azure>, :bold-color<maroon>,
     </figure>
     <hr>
 
-    <h2>Cro: Web Services and APIs</h2>
+    <h2>Cro: Web Services</h2>
     <p>Cro is raku’s ecosystem for building web services, offering a modular framework for creating HTTP applications, APIs, and real-time services. It provides a powerful and extensible pipeline-based architecture, making it easy to build scalable and maintainable applications. Cro’s built-in support for WebSockets, middleware, and async processing ensures that hArc applications can handle real-time interactions efficiently.</p>
     <hr>
 
-    <h2>Raku: The Foundation</h2>
+    <h2>Raku: Language Toolkit</h2>
+    <p>With support for functional, object-oriented, and reactive programming paradigms, raku is a  language toolkit for developers to build concise and maintainable websites. A powerful concurrency model, grammars, and metaprogramming capabilities make it well-suited for more advanced web applications. This gradually-typed scripting language makes easy things easy and hard things possible.</p>
 
-    <p>With support for functional, object-oriented, and reactive programming paradigms, raku is a comprehensive language toolkit for developers to build concise and maintainable websites. A powerful concurrency model, grammars, and metaprogramming capabilities make it well-suited for more advanced web applications. This gradually-typed scripting language makes easy things easy and hard things possible.</p>
+    <p>~librasteve</p>
 
     END
 }
