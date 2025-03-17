@@ -63,7 +63,7 @@ install sass (in the static/css dir)
 - some tweaks to root styles (mainly to reduce scale) from [here](https://github.com/picocss/pico/discussions/482)
 
 ## Deployment
-- `zef install https://github.com/librasteve/Air-Play.git --deps-only --/test`
+- Install Air, Cro & Red (see above)
 - `git clone https://github.com/librasteve/Air-Play.git && cd Air-Play`
 - `zef install . --force-install --/test`
 - adjust .cro.yml for your needs (e.g. HTTPS) -or-
