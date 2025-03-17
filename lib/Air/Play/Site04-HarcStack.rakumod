@@ -9,7 +9,7 @@ my $cro  = external :href<https://cro.raku.org>;
 my $raku = external :href<https://raku.org>;
 my $talk = external :href<https://discord.gg/VzYpdQ6>;
 
-my &index = &page.assuming( :REFRESH(5),
+my &index = &page.assuming( #:REFRESH(5),
     title => 'hÅrc',
     description => 'HTMX, Air, Red, Cro',
 
