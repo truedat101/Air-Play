@@ -42,6 +42,7 @@ site :theme-color<azure>, :bold-color<maroon>,
     <img src="/img/Site10-Counter.png" alt="hArc stack example code">
     <figcaption>hArc example code shown in IntelliJ IDE with raku plugin 2.0.</figcaption>
     </figure>
+    <p>hArc stands for "HTMX, Air, Red, Cro" - the <a href="https://raku.land/zef:librasteve/Air">Air raku module</a> is the "glue" that makes the stack. There's also the <a href="https://raku.land/zef:librasteve/Air::Play">Air::Play module</a> for website examples and Getting Started instruction.</p>
     <hr>
 
     <h2>HTMX: Server Side</h2>

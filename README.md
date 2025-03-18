@@ -6,16 +6,7 @@ Please raise an Issue if you would like to feedback or assist.
 
 # Air::Play
 
-Playing with the HARC stack (HTMX, Air, Red, Cro)
-Examples with Pico CSS
-
-path is
-1. get to the point where I can build a website on Cro the right way
-2. build a static site example that could be a new design for raku.org and then offer it to the team,
-3. add htmx based edit / preview to certain pages for admin (like the current rakudoc site), with raku syntax highlighting with Rainbow and
-4. do something similar for markdown
-
----
+Playing with the hArc stack (HTMX, Air, Red, Cro) - https://harcstack.org. Some website with Pico CSS styling.
 
 # Local
 
