@@ -82,26 +82,3 @@ this site runs on a linux server preloaded with git, raku, zef (& docker-compose
 Copyright(c) 2025 Henley Cloud Consulting Ltd.
 
 This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
-
----
-
----
-
-# BACKLOG
-- gnat css https://github.com/gnat/css-scope-inline?tab=readme-ov-file
-- pico/gnat css to Theme module
-- picocss.com left nav
-- language switcher
-- sitemap & robots.txt
-  - https://www.xml-sitemaps.com/details-elucid8.org-74ab32874.html
-  - https://github.com/tristangoossens/php-sitemap-generator/tree/main
-  - https://developers.google.com/search/docs/crawling-indexing/robots/create-robots-txt
-- htmx forms
-- do all pico examples https://picocss.com/docs/
-- do all htmx examples
-- docker deployment
-eg
-```
-docker build -t this .
-docker run --rm -p 8888:8888 this
-```
