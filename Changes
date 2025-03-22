@@ -2,6 +2,9 @@ Revision history for Air::Play
 
 {{$NEXT}}
 
+0.0.6  2025-03-22T21:33:07Z
+    - umami analytics
+
 0.0.5  2025-03-18T11:26:00Z
     - link to harcstack site
 

@@ -1,6 +1,9 @@
 #!/usr/bin/env raku
 
 use lib "../lib";
+
+my $start = now;
+
 use Cro::HTTP::Log::File;
 use Cro::HTTP::Router;
 use Cro::HTTP::Server;
@@ -17,6 +20,8 @@ my Cro::Service $http = Cro::HTTP::Server.new(
     ],
 );
 $http.start;
+my $elapsed = (now - $start).round(0.01);
+say "Build time $elapsed sec";
 say "Listening at http://0.0.0.0:3000";
 react {
     whenever signal(SIGINT) {
