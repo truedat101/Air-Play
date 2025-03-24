@@ -12,12 +12,11 @@ my &planets = &table.assuming(
 );
 
 
-my &index = &page.assuming( :REFRESH(1),
+my &index = &page.assuming( #:REFRESH(5),
     title       => 'hÅrc',
     description => 'HTMX, Air, Red, Cro',
     footer      => footer p ['Aloft on ', b 'Åir'],
 );
-
 
 sub SITE is export {
     site #:bold-color<blue>,
