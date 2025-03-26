@@ -28,7 +28,7 @@ Person.^populate;
 
 role HxSearchBox {
     method hx-search-box(--> Hash()) {
-        :hx-put("{self.url}/{self.id}/search"),
+        :hx-put("{self.url}/{self.serial}/search"),
         :hx-trigger<keyup changed delay:500ms, search>,
         :hx-target<#search-results>,
         :hx-swap<outerHTML>,
@@ -37,8 +37,8 @@ role HxSearchBox {
 }
 
 class SearchBox does HxSearchBox {
-    has $.id;
     has $.url;
+    has $.serial;
     has $.title;
 
     multi method HTML {
@@ -71,7 +71,7 @@ class SearchTable does Component {
     has Str  $.title = 'Search';
     has      $.thead = <First Last Email>;
 
-    has SearchBox $.searchbox .= new: :id(self.id), :url(self.url), :$!title;
+    has SearchBox $.searchbox .= new: :url(self.url), :serial(self.serial), :$!title;
     has Results   $.results   .= new;
 
     method thead {

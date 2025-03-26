@@ -4,19 +4,18 @@ use Air::Component;
 
 use Air::Play::Site;
 
-my @components = [SearchTable.new];
-
 my &index = &page.assuming( #:REFRESH(1),
     title       => 'hÅrc',
     description => 'HTMX, Air, Red, Cro',
     footer      => footer p ['Aloft on ', b 'Åir'],
 );
 
+
 sub SITE is export {
-    site :@components,
+    site :components[SearchTable.new],
         index
             main
                 div [
-                    searchtable :id(0)
+                    searchtable :serial(0)
                 ]
 }

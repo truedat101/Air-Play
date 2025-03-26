@@ -8,15 +8,6 @@ my &index = &page.assuming( #:REFRESH(5),
     footer      => footer p ['Aloft on ', b 'Åir'],
 );
 
-sub hx-increment(--> Hash()) {
-    :hx-get</counter/1/increment>, :hx-target<#counter-input>,
-    :hx-swap<outerHTML>, :hx-trigger<click>,
-}
-sub hx-load(--> Hash()) {
-    :hx-get<counter/1>, :hx-target<input>,
-    :hx-swap<outerHTML>, :hx-trigger<load>,
-}
-
 class Counter does Component {
     has Int $.value = 0;
 
@@ -25,18 +16,29 @@ class Counter does Component {
         respond self
     }
 
+    method hx-increment(--> Hash()) {
+        :hx-get("$.url-id/increment"), :hx-target("#$.id"),
+        :hx-swap<outerHTML>, :hx-trigger<click>,
+    }
+    method hx-load(--> Hash()) {
+        :hx-get($.url-id), :hx-target<input>,
+        :hx-swap<outerHTML>, :hx-trigger<load>,
+    }
+
     multi method HTML {
-        input :id<counter-input>, :name<counter>, :value($!value);
+        input :$.id, :$.name, :$!value;
     }
 }
 
+my $c = Counter.new;
+
 sub SITE is export {
-    site :components(Counter.new), #:theme-color<red>,
+    site :components($c), #:theme-color<red>,
         index
             main [
                 h3 'Server Counter:';
-                form |hx-increment, [
-                    input |hx-load;
+                form |$c.hx-increment, [
+                    input |$c.hx-load;
                     button :type<submit>, '+';
                 ];
             ]

@@ -2,24 +2,6 @@ use Air::Functional :BASE;
 use Air::Base;
 use Air::Component;
 
-sub hx-create($url --> Hash()) {
-    :hx-post("$url"),
-    :hx-target<table>,
-    :hx-swap<beforeend>,
-    :hx-on:htmx:after-request<this.reset()>,
-}
-sub hx-toggle($url, $id --> Hash()) {
-    :hx-get("$url/$id/toggle"),
-    :hx-target<closest tr>,
-    :hx-swap<outerHTML>,
-}
-sub hx-delete($url, $id --> Hash()) {
-    :hx-delete("$url/$id"),
-    :hx-confirm<Are you sure?>,
-    :hx-target<closest tr>,
-    :hx-swap<delete>,
-}
-
 class Todo does Component {
     has Bool $.checked is rw = False;
     has Str  $.text;
@@ -29,11 +11,28 @@ class Todo does Component {
         respond self;
     }
 
+    method hx-create(--> Hash()) {
+        :hx-post("todo"),
+        :hx-target<table>,
+        :hx-swap<beforeend>,
+    }
+    method hx-delete(--> Hash()) {
+        :hx-delete($.url-id),
+        :hx-confirm<Are you sure?>,
+        :hx-target<closest tr>,
+        :hx-swap<delete>,
+    }
+    method hx-toggle(--> Hash()) {
+        :hx-get("$.url-id/toggle"),
+        :hx-target<closest tr>,
+        :hx-swap<outerHTML>,
+    }
+
     multi method HTML {
         tr
-            td( input :type<checkbox>, |hx-toggle($.url,$.id), :$!checked ),
+            td( input :type<checkbox>, |$.hx-toggle, :$!checked ),
             td( $!checked ?? del $!text !! $!text),
-            td( button :type<submit>, |hx-delete($.url,$.id), :style<width:50px>, '-'),
+            td( button :type<submit>, |$.hx-delete, :style<width:50px>, '-'),
     }
 }
 
@@ -51,7 +50,7 @@ sub SITE is export {
             main [
                 h3 'Todos';
                 table @todos;
-                form  |hx-create("todo"), [
+                form  |Todo.hx-create, [
                     input  :name<text>;
                     button :type<submit>, '+';
                 ];

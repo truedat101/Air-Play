@@ -30,11 +30,11 @@ my &index = &page.assuming( #:REFRESH(5),
     |),
 );
 
-my @tools = [Analytics.new: :provider(Umami), :key<YOUR KEY HERE>,];
+#my @tools = [Analytics.new: :provider(Umami), :key<35777f61-5123-4bb8-afb1-aced487af36e>,];
 
 sub SITE is export {
 
-site :@tools, :theme-color<azure>, :bold-color<maroon>,
+site :theme-color<azure>, :bold-color<maroon>, # :@tools,
  index
   main
    safe Q:to/END/;
