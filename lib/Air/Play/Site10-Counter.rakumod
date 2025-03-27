@@ -8,42 +8,35 @@ my &index = &page.assuming( #:REFRESH(5),
     footer      => footer p ['Aloft on ', b 'Åir'],
 );
 
-role HxCounter {
-    method hx-increment(--> Hash()) {
-        :hx-get("$.url-id/increment"), :hx-target("#$.id"),
-        :hx-swap<outerHTML>, :hx-trigger<click>;
-    }
-    method hx-load(--> Hash()) {
-        :hx-get($.url-id), :hx-target<input>,
-        :hx-swap<outerHTML>, :hx-trigger<load>;
-    }
-}
-
 class Counter does Component {
-    also does HxCounter;
-
     has Int $.value = 0;
 
     method increment is routable {
         $!value++;
-        respond self;
+        respond self
+    }
+
+    method hx-increment(--> Hash()) {
+        :hx-get("$.url-id/increment"),
+        :hx-target("#$.id"),
+        :hx-swap<outerHTML>,
+        :hx-trigger<submit>,
     }
 
     multi method HTML {
-        input :$.id, :$.name, :$!value;
+        input :$.id, :$.name, :$!value
     }
 }
 
-my $c = Counter.new;
+my $counter = Counter.new;
 
 sub SITE is export {
-    site :components($c), #:theme-color<red>,
+    site :components[$counter], #:theme-color<red>,
         index
-            main [
-                h3 'Server Counter:';
-                form |$c.hx-increment, [
-                    input |$c.hx-load;
+            main
+                form |$counter.hx-increment, [
+                    h3 'Counter:';
+                    $counter.HTML;
                     button :type<submit>, '+';
-                ];
-            ]
+                ]
 }
