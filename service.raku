@@ -1,8 +1,7 @@
 #!/usr/bin/env raku
+my $start = now;
 
 use lib "../lib";
-
-my $start = now;
 
 use Cro::HTTP::Log::File;
 use Cro::HTTP::Router;

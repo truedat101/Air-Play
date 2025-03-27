@@ -1,5 +1,6 @@
 use Air::Functional :BASE;
 use Air::Base;
+use Air::Component;
 
 # content
 my %data =
@@ -26,13 +27,15 @@ my $Google = external :href<https://google.com>;
 
 # theme
 my &index = &page.assuming( #:REFRESH(5),
-    title       => 'hx-arc',
-    description => 'HTMX: Air, Raku, Cro',
-    nav         => nav(
-        logo    => safe('<a href="/">hx-<b>årc</b></a>'),
+    title => 'hÅrc',
+    description => 'HTMX, Air, Red, Cro',
+
+    nav => nav(
+        logo    => safe('<a href="/">h<b>&Aring;</b>rc</a>'),
         items   => [:$Content1, :$Content2, :$Google],
         widgets => [lightdark],
     ),
+
     footer      => footer p ['Aloft on ', b 'åir'],
 );
 

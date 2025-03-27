@@ -8,21 +8,25 @@ my &index = &page.assuming( #:REFRESH(5),
     footer      => footer p ['Aloft on ', b 'Åir'],
 );
 
+role HxCounter {
+    method hx-increment(--> Hash()) {
+        :hx-get("$.url-id/increment"), :hx-target("#$.id"),
+        :hx-swap<outerHTML>, :hx-trigger<click>;
+    }
+    method hx-load(--> Hash()) {
+        :hx-get($.url-id), :hx-target<input>,
+        :hx-swap<outerHTML>, :hx-trigger<load>;
+    }
+}
+
 class Counter does Component {
+    also does HxCounter;
+
     has Int $.value = 0;
 
     method increment is routable {
         $!value++;
-        respond self
-    }
-
-    method hx-increment(--> Hash()) {
-        :hx-get("$.url-id/increment"), :hx-target("#$.id"),
-        :hx-swap<outerHTML>, :hx-trigger<click>,
-    }
-    method hx-load(--> Hash()) {
-        :hx-get($.url-id), :hx-target<input>,
-        :hx-swap<outerHTML>, :hx-trigger<load>,
+        respond self;
     }
 
     multi method HTML {

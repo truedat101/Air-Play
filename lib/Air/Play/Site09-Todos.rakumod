@@ -2,15 +2,7 @@ use Air::Functional :BASE;
 use Air::Base;
 use Air::Component;
 
-class Todo does Component {
-    has Bool $.checked is rw = False;
-    has Str  $.text;
-
-    method toggle is routable {
-        $!checked = !$!checked;
-        respond self;
-    }
-
+role HxTodo {
     method hx-create(--> Hash()) {
         :hx-post("todo"),
         :hx-target<table>,
@@ -26,6 +18,18 @@ class Todo does Component {
         :hx-get("$.url-id/toggle"),
         :hx-target<closest tr>,
         :hx-swap<outerHTML>,
+    }
+}
+
+class Todo does Component {
+    also does HxTodo;
+
+    has Bool $.checked is rw = False;
+    has Str  $.text;
+
+    method toggle is routable {
+        $!checked = !$!checked;
+        respond self;
     }
 
     multi method HTML {
