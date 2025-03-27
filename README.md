@@ -61,7 +61,7 @@ install sass (in the static/css dir)
 - `tail -f server.log` and finally `kill -9 PID`  [ps -ef | grep raku]
 
 ## Build
-this site runs on a linux server preloaded with git, raku, zef (& docker-compose)
+this site runs on a linux server preloaded with git, raku, zef (& docker-compose) which can be set up with raku [CLI::AWS::EC2-Simple](https://raku.land/zef:librasteve/CLI::AWS::EC2-Simple)
 - `sudo apt-get install build-essentials` (for Digest::SHA1::Native)
 - viz. https://chatgpt.com/share/6748a185-c690-8009-96ff-80bf8018dd7d
     - `sudo apt-get install nginx`
