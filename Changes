@@ -2,6 +2,9 @@ Revision history for Air::Play
 
 {{$NEXT}}
 
+0.0.8  2025-03-27T16:54:35Z
+    - tweak counter example
+
 0.0.7  2025-03-27T10:51:11Z
     - tweak todo docs
 
