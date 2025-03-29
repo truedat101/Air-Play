@@ -34,7 +34,7 @@ my &index = &page.assuming( #:REFRESH(5),
 
 sub SITE is export {
 
-site :theme-color<azure>, :bold-color<maroon>, # :@tools,
+site :theme-color<azure>, :bold-color<maroon>, :@tools,
  index
   main
    safe Q:to/END/;
