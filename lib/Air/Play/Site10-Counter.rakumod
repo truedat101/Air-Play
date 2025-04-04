@@ -28,7 +28,7 @@ class Counter does Component {
     }
 }
 
-my $counter = Counter.new;
+my Counter $counter .= new;
 
 sub SITE is export {
     site :components[$counter], #:theme-color<red>,
