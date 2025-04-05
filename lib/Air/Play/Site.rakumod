@@ -36,7 +36,7 @@ role HxSearchBox {
     }
 }
 
-class SearchBox does HxSearchBox {
+class SearchBox   does HxSearchBox {
     has $.url;
     has $.serial;
     has $.title;
@@ -55,7 +55,7 @@ class SearchBox does HxSearchBox {
     }
 }
 
-class Results does Component {
+class Results     does Component {
     has @.data is rw = [];
 
     multi method HTML {
@@ -80,7 +80,7 @@ class SearchTable does Component {
         }
     }
 
-    method search(:$needle) is routable {
+    method search(:$needle) is controller {
         sub check($_) { .fc.contains($needle.fc) }
 
         $!results.data = Person.^all.grep: {
