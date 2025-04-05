@@ -80,7 +80,7 @@ class SearchTable does Component {
         }
     }
 
-    method search(:$needle) is routable {
+    method search(:$needle) is controller {
         sub check($_) { .fc.contains($needle.fc) }
 
         $!results.data = Person.^all.grep: {
