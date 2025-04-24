@@ -8,10 +8,10 @@ my &index = &page.assuming( #:REFRESH(5),
     footer      => footer p ['Aloft on ', b 'Åir'],
 );
 
-class Counter does Component {
+class Counter does Component does Tag {
     has Int $.value = 0;
 
-    method increment is routable {
+    method increment is controller {
         $!value++;
         respond self
     }
@@ -28,7 +28,7 @@ class Counter does Component {
     }
 }
 
-my $counter = Counter.new;
+my Counter $counter .= new;
 
 sub SITE is export {
     site :components[$counter], #:theme-color<red>,
@@ -36,7 +36,7 @@ sub SITE is export {
             main
                 form |$counter.hx-increment, [
                     h3 'Counter:';
-                    $counter.HTML;
+                    $counter;
                     button :type<submit>, '+';
                 ]
 }

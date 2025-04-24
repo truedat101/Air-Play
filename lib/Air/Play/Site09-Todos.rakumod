@@ -27,7 +27,7 @@ class Todo does Component {
     has Bool $.checked is rw = False;
     has Str  $.text;
 
-    method toggle is routable {
+    method toggle is controller {
         $!checked = !$!checked;
         respond self;
     }
